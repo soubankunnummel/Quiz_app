@@ -5,11 +5,46 @@ const questions = [
         correctAnswer: 2
     },
     {
-        question: "Which planet is known as the Red Planet?",
-        options: ["Mars", "Venus", "Jupiter", "Saturn"],
+        question: "What is the largest planet in our solar system?",
+        options: ["Earth", "Mars", "Jupiter", "Saturn"],
+        correctAnswer: 2
+    },
+    {
+        question: "Which planet is known as the gas giant?",
+        options: ["Earth", "Mars", "Jupiter", "Saturn"],
+        correctAnswer: 1
+    },
+    {
+        question: "What is the hottest temperature on Mars?",
+        options: ["-125°C", "-95°C", "-50°C", "0°C"],
         correctAnswer: 0
     },
-    // Add 8 more questions here
+    {
+        question: "What is the atmosphere of Mars made up of?",
+        options: ["Nitrogen and Oxygen", "Carbon Dioxide", "Hydrogen and Helium", "Methane and Nitrogen"],
+        correctAnswer: 2
+    },
+    {
+        question: "How long does it take Mars to orbit the sun?",
+        options: ["1 year", "1.5 years", "2 years", "1.88 years"],
+        correctAnswer: 3
+    },
+    {
+        question: "What is the farthest human-made object from Earth?",
+        options: ["The Moon", "The International Space Station", "The Hubble Space Telescope", "The Voyager 1 Spacecraft"],
+        correctAnswer: 3
+    },
+    {
+        question: "Who was the first person to walk on the moon?",
+        options: ["Neil Armstrong", "Buzz Aldrin", "John Glenn", "Sally Ride"],
+        correctAnswer: 0
+    },
+    {
+        question: "What is the largest moon in our solar system?",
+        options: ["The Moon", "Ganymede", "Triton", "Enceladus"],
+        correctAnswer: 1
+    },
+    
 ];
 
 let currentQuestion = 0;
@@ -52,7 +87,7 @@ function selectOption(index) {
     loadQuestion();
 }
 
-function nextQuestion() {
+function nextQtn() {
     updateTimeSpent();
     if (currentQuestion < questions.length - 1) {
         currentQuestion++;
@@ -62,7 +97,7 @@ function nextQuestion() {
     }
 }
 
-function prevQuestion() {
+function priveQtn() {
     updateTimeSpent();
     if (currentQuestion > 0) {
         currentQuestion--;
@@ -92,7 +127,7 @@ function finishQuiz() {
     ).join("");
 }
 
-prevBtn.addEventListener("click", prevQuestion);
-nextBtn.addEventListener("click", nextQuestion);
+prevBtn.addEventListener("click", priveQtn);
+nextBtn.addEventListener("click", nextQtn);
 
 loadQuestion();
